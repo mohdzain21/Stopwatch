@@ -19,6 +19,7 @@ function Watch() {
   }, [isRunning]);
 
   const startStopwatch = () => {
+    setTime(0); // Reset time when starting
     setIsRunning(true);
   };
 
@@ -40,7 +41,7 @@ function Watch() {
   return (
     <div className="stopwatch">
       <h1>Stopwatch</h1>
-      <div className="time">{formatTime()}</div>
+      <div className="time">Time: {formatTime()}</div> {/* Update time display */}
       <div className="buttons">
         {!isRunning ? (
           <button onClick={startStopwatch}>Start</button>
